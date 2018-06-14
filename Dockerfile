@@ -7,5 +7,7 @@ RUN yum install -y nodejs
 RUN yum install -y git
 RUN git clone https://github.com/abbr/ShowPreper.git
 RUN cd ShowPreper && npm install
-RUN cd ShowPreper && node run dist
 
+WORKDIR /ShowPreper
+
+CMD [ "bash", "start.sh" ]
